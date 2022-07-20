@@ -56,6 +56,7 @@ require_once NAXOS_PLUGIN_DIR . 'shortcodes/blog.php';
 require_once NAXOS_PLUGIN_DIR . 'shortcodes/social-links.php';
 require_once NAXOS_PLUGIN_DIR . 'shortcodes/skills.php';
 require_once NAXOS_PLUGIN_DIR . 'shortcodes/google-maps.php';
+require_once NAXOS_PLUGIN_DIR . 'shortcodes/team.php';
 
 
 

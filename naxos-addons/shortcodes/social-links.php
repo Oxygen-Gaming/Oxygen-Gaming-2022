@@ -6,7 +6,7 @@ class Naxos_Shortcode_Social_Links {
 		extract( shortcode_atts( array(
 			'twitter'		=> '',
 			'facebook'		=> '',
-			'linkedin'		=> '',
+			'twitter2'		=> '',
 			'instagram'		=> '',
 			'twitch'		=> ''
 		), $atts ) );
@@ -30,11 +30,11 @@ class Naxos_Shortcode_Social_Links {
 		}
 		
 		// LinkedIn
-		$linkedin = vc_build_link( $linkedin );
+		$twitter2 = vc_build_link( $twitter2 );
 		
-		if ( strlen( $linkedin['url'] ) > 0 ) {
+		if ( strlen( $twitter2['url'] ) > 0 ) {
 			$target = strlen( $linkedin['target'] ) > 0 ? 'target="' . $linkedin['target'] . '"' : '';
-			$output .= '<a href="' . esc_url( $linkedin['url'] ) . '" title="' . esc_html__( "LinkedIn", "naxos_addons" ) . '" ' . esc_attr( $target ) . '><i class="fab fa-linkedin-in"></i></a>';
+			$output .= '<a href="' . esc_url( $twitter2['url'] ) . '" title="' . esc_html__( "Twitter", "naxos_addons" ) . '" ' . esc_attr( $target ) . '><i class="fab fa-twitter"></i></a>';
 		}
 		
 		// Instagram
@@ -82,8 +82,8 @@ class Naxos_Shortcode_Social_Links {
 			  	),
 				array(
 					'type' 		  => 'vc_link',
-					'heading' 	  => esc_html__( "LinkedIn URL", "naxos-addons" ),
-					'param_name'  => 'linkedin',
+					'heading' 	  => esc_html__( "Twitter Secundario URL", "naxos-addons" ),
+					'param_name'  => 'twitter2',
 					'description' => "",
 					"admin_label" => true,
 			  	),
