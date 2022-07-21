@@ -735,8 +735,15 @@ section.parallax a:hover {
 	text-transform: uppercase;
 }
 
-.nav-menu li a:hover {
-	color:#fff !important;
+@media (max-width:991px) {
+	.nav-menu li a:hover {
+		color:black !important;
+	}
+}
+@media (min-width:992px) {
+	.nav-menu li a:hover {
+		color:#fff !important;
+	}
 }
 
 .nav-menu li a span {
