@@ -92,7 +92,7 @@ textarea.notice,
 }
 
 .banner:before {
-	background:linear-gradient(-47deg, #1AA9FF 0%, #1170AA 100%);
+	background:linear-gradient(-47deg, #1aa9ffa1 0%, #1170AA 100%);
 }
 
 .btn,
@@ -146,7 +146,7 @@ input.search-submit {
 .pagination li a:hover,
 .pagination li a.active,
 .page-links .post-page-numbers:hover {
-	background-color:#5f36bb;
+	background-color:#1885c7;
 }
 
 .checkout-button:hover,

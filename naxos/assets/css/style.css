@@ -663,6 +663,10 @@ section.parallax {
 	background-size:cover;
 }
 
+section.no-cover-fondo {
+	background-size:auto;
+}
+
 section.parallax h1,
 section.parallax h2,
 section.parallax h3,
@@ -1493,13 +1497,41 @@ section.parallax a:hover {
 	content:"";
 	position:absolute;
 	z-index:0;
-	left:48%;
-	top:50%;
-	width:1200px;
-	height:1000px;
-	background-color:#eef3fa;
+	width:100%;
+	height:100%;
+	background-color:#1aa9ffd1;
     border-radius:120px;
-	transform:skew(-15deg) rotate(38deg) translateY(-50%);
+	transform:skew(50deg) rotate(80deg) translateY(30%);
+}
+
+.fondo-raya {
+	overflow:hidden;
+}
+
+.fondo-raya:before {
+	content:"";
+	position:absolute;
+	z-index:0;
+	width:100%;
+	height:100%;
+	background-color:#1aa9ffd1;
+    border-radius:120px;
+	transform:skew(50deg) rotate(80deg) translateY(30%);
+}
+
+.fondo-raya-invertido {
+	overflow:hidden;
+}
+
+.fondo-raya-invertido:before {
+	content:"";
+	position:absolute;
+	z-index:0;
+	width:100%;
+	height:100%;
+	background-color:#1aa9ffd1;
+    border-radius:120px;
+	transform:skew(-50deg) rotate(-80deg) translateY(-30%);
 }
 
 /* Box */
@@ -1685,6 +1717,7 @@ section.parallax .counter p {
     position:relative;
     background-color:#fff;
     transition:all 0.3s;
+	border-radius: 5px;
 }
 
 [class^="col-"]:last-child .team-member {
