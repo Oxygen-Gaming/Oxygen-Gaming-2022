@@ -21,12 +21,12 @@ class Naxos_Shortcode_Social_Links {
 			$output .= '<a href="' . esc_url( $twitter['url'] ) . '" title="' . esc_html__( "Twitter", "naxos_addons" ) . '" ' . esc_attr( $target ) . '><i class="fab fa-twitter"></i></a>';
 		}
 		
-		// Facebook
+		// Discord
 		$facebook = vc_build_link( $facebook );
 		
 		if ( strlen( $facebook['url'] ) > 0 ) {
 			$target = strlen( $facebook['target'] ) > 0 ? 'target="' . $facebook['target'] . '"' : '';
-			$output .= '<a href="' . esc_url( $facebook['url'] ) . '" title="' . esc_html__( "Facebook", "naxos_addons" ) . '" ' . esc_attr( $target ) . '><i class="fab fa-facebook-f"></i></a>';
+			$output .= '<a href="' . esc_url( $facebook['url'] ) . '" title="' . esc_html__( "Discord", "naxos_addons" ) . '" ' . esc_attr( $target ) . '><i class="fab fa-discord"></i></a>';
 		}
 		
 		// LinkedIn
@@ -75,7 +75,7 @@ class Naxos_Shortcode_Social_Links {
 			  	),
 				array(
 					'type' 		  => 'vc_link',
-					'heading' 	  => esc_html__( "Facebook URL", "naxos-addons" ),
+					'heading' 	  => esc_html__( "Discord URL", "naxos-addons" ),
 					'param_name'  => 'facebook',
 					'description' => "",
 					"admin_label" => true,
