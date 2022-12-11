@@ -77,7 +77,7 @@ class Naxos_Shortcode_Worker {
 		
 		if ( strlen( $dribbble['url'] ) > 0 ) {
 			$target = strlen( $dribbble['target'] ) > 0 ? 'target="' . $dribbble['target'] . '"' : '';
-			$social .= '<a href="' . esc_url( $dribbble['url'] ) . '" title="' . esc_html__( "Dribbble", "naxos-addons" ) . '" ' . esc_attr( $target ) . '><i class="fab fa-dribbble"></i></a>';
+			$social .= '<a href="' . esc_url( $dribbble['url'] ) . '" title="' . esc_html__( "Twitch", "naxos-addons" ) . '" ' . esc_attr( $target ) . '><i class="fab fa-twitch"></i></a>';
 		}
 		
 		// Result
@@ -176,7 +176,7 @@ class Naxos_Shortcode_Worker {
 				array(
 					"group" 	  => "Social Links",
 					'type' 		  => 'vc_link',
-					'heading' 	  => esc_html__( "Dribbble URL", "naxos-addons" ),
+					'heading' 	  => esc_html__( "Twitch URL", "naxos-addons" ),
 					'param_name'  => 'dribbble',
 					'description' => "",
 					"admin_label" => true,
