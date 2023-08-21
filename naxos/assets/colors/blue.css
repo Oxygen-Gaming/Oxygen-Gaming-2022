@@ -57,7 +57,8 @@ footer .widget_social a:hover > i,
 .fixed-menu .nav-menu li a:hover,
 .wpcf7 form.sent .wpcf7-response-output,
 .is-style-outline .wp-block-button__link {
-	color:black !important;
+	color:#1aa9ff !important;
+	border: 5px solid #ffffff !important;
 }
 
 .custom-btn,
