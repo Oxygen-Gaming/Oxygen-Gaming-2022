@@ -2,6 +2,8 @@
 
 > 🧑‍🚀 **Oxygen Gaming** Look at this project!
 
+This project is an informative website about Oxygen Gaming an esports club. In this website the owner can add information using Wordpress CMS. It shows news, players, events. Also it has a shop where people can buy offial clothes.
+
 ## 👀 Stack
 
 - Wordpress
