@@ -1,0 +1,295 @@
+<!--
+    Este archivo HTML define una página de patrocinadores para un sitio web.
+    La estructura principal incluye estilos CSS y secciones para cada patrocinador.
+
+    Estructura del documento:
+    - DOCTYPE y configuración básica del documento HTML.
+    - Estilos CSS internos para la apariencia y disposición de las secciones de patrocinadores.
+    - Secciones principales que contienen información y enlaces a los patrocinadores.
+
+    Estilos CSS:
+    - Estilos generales para el cuerpo del documento, incluyendo márgenes, relleno y fuente.
+    - Estilos específicos para las secciones de patrocinadores, alternando fondos blancos y azules.
+    - Estilos para las imágenes de los patrocinadores con efectos de hover.
+    - Estilos para los botones de llamada a la acción (CTA) con efectos de hover y active.
+    - Media queries para ajustar el diseño en dispositivos móviles y tablets.
+
+    Sección de contenido:
+    - Secciones de patrocinadores con imágenes, descripciones y botones de llamada a la acción.
+    - Enlaces a los sitios web de los patrocinadores.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrocinadores</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Contenedor principal */
+        .sponsor-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 0;
+            width: 100%;
+        }
+
+        /* Alternar fondo */
+        .white-bg {
+            background-color: #ffffff;
+            color: black;
+        }
+
+        .blue-bg {
+            background-color: #1AA9FF;
+            color: white;
+        }
+
+        .blue-bg h3, .blue-bg h4, .blue-bg p {
+            color: white;
+        }
+
+        /* Contenedor del patrocinador */
+        .sponsor {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1000px;
+            width: 100%;
+            gap: 30px;
+        }
+
+        /* Para la sección azul: imagen a la derecha */
+        .blue-bg .sponsor {
+            flex-direction: row-reverse;
+        }
+
+        /* Imágenes con efecto hover */
+        .sponsor img {
+            width: 250px;
+            height: 200px;
+            object-fit: contain;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+            display: block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Efecto de aumento de la imagen al pasar el ratón */
+        .sponsor img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contenedor de descripción */
+        .sponsor-description {
+            flex: 1;
+            text-align: left;
+        }
+
+        .sponsor-description h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .sponsor-description h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        .sponsor-description p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        /* Estilo para los botones */
+        .cta-button {
+            display: inline-block;
+            background-color: #1AA9FF;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+        }
+
+        /* Efecto hover para el botón */
+        .cta-button:hover {
+            background-color: #0073aa;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        /* Efecto active para el botón (cuando se presiona) */
+        .cta-button:active {
+            background-color: #005177;
+            transform: scale(1);
+        }
+
+        /* Estilo para los botones en secciones con fondo azul */
+        .blue-bg .cta-button {
+            background-color: #ffffff;
+            color: #1AA9FF;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: bold;
+            border: 2px solid #1AA9FF;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            text-decoration: none;
+        }
+
+        /* Hover para el botón */
+        .blue-bg .cta-button:hover {
+            background-color: #ffffff;
+            color: #1AA9FF;
+            transform: scale(1.05);
+        }
+
+        /* Active */
+        .blue-bg .cta-button:active {
+            background-color: #005177;
+            transform: scale(1);
+        }
+
+        /* Vista de Tablets */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .sponsor {
+                flex-direction: row;
+                align-items: center;
+                text-align: left;
+                gap: 30px;
+                padding: 20px;
+            }
+
+            .blue-bg .sponsor {
+                flex-direction: row-reverse;
+            }
+
+            .sponsor img {
+                width: 250px;
+                height: 200px;
+            }
+
+            .sponsor-description {
+                flex: 1;
+                text-align: left;
+                padding: 0 20px;
+            }
+
+            .sponsor-description h3 {
+                font-size: 22px;
+            }
+
+            .sponsor-description h4 {
+                font-size: 18px;
+            }
+
+            .sponsor-description p {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .sponsor-section {
+                padding: 50px 0;
+            }
+        }
+
+    
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .sponsor {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .blue-bg .sponsor {
+                flex-direction: column;
+            }
+
+            .sponsor img {
+                max-width: 250px;
+                margin-bottom: 15px;
+            }
+
+            .sponsor-description {
+                text-align: center;
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Primera Sección -->
+    <div class="sponsor-section white-bg">
+        <div class="sponsor">
+            <a href="https://www.playseat.com" target="_blank">
+                <img src="https://oxygengaming.es/wp-content/uploads/2024/01/91cbda42cb64d8a2c68f90cc9abac1f6.w400.h400.png" alt="Logo PLAYSEAT">
+            </a>
+            <div class="sponsor-description">
+                <h3>PLAYSEAT</h3>
+                <h4>Playseat® es una marca líder en la fabricación de asientos de simulación.</h4>
+                <p>Reconocida por ofrecer productos de alta calidad, brinda una experiencia de conducción realista tanto para aficionados como para profesionales del simracing.</p>
+                <a href="https://www.playseat.com" target="_blank" class="cta-button">Descubrir</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Segunda Sección (Imagen a la derecha) -->
+    <div class="sponsor-section blue-bg">
+        <div class="sponsor">
+            <a href="https://emixweb.es" target="_blank">
+                <img src="https://emixweb.es/img/logo.png" alt="Logo EMIX">
+            </a>
+            <div class="sponsor-description">
+                <h3>EMIX</h3>
+                <h4>Especialistas en ropa deportiva personalizada.</h4>
+                <p>EMIX utiliza tejidos avanzados ideales para la práctica deportiva profesional y amateur.</p>
+                <a href="https://emixweb.es" target="_blank" class="cta-button">Descubrir</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tercera Sección -->
+    <div class="sponsor-section white-bg">
+        <div class="sponsor">
+            <a href="https://atribus.com" target="_blank">
+                <img src="https://atribus.com/wp-content/uploads/Horizontal-negro.png" alt="Logo Atribus">
+            </a>
+            <div class="sponsor-description">
+                <h3>Atribus</h3>
+                <h4>Monitorización y análisis de datos en redes sociales.</h4>
+                <p>Atribus permite analizar en tiempo real lo que se dice de tu marca con tecnologías avanzadas de machine learning.</p>
+                <a href="https://atribus.com" target="_blank" class="cta-button">Descubrir</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

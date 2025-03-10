@@ -1,0 +1,253 @@
+<!--
+    Este archivo HTML define un pie de página para un sitio web.
+    La estructura principal incluye estilos CSS y enlaces a redes sociales.
+
+    Estructura del documento:
+    - DOCTYPE y configuración básica del documento HTML.
+    - Estilos CSS internos para la apariencia y disposición del pie de página.
+    - Sección principal que contiene menús de navegación y enlaces a redes sociales.
+
+    Estilos CSS:
+    - Estilos generales para el contenedor del pie de página, incluyendo fondo, color, tamaño, bordes y efectos de transición.
+    - Estilos específicos para los menús de navegación y enlaces a redes sociales.
+    - Media queries para ajustar el diseño del pie de página en dispositivos móviles.
+
+    Sección de contenido:
+    - Menús de navegación con enlaces a diferentes secciones del sitio web.
+    - Enlaces a redes sociales con iconos interactivos.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        /* Estilos base para el footer */
+        #contenido_footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #1a191d;
+            padding: 10px 75px;
+        }
+
+        @media (max-width:320px) {
+            #contenido_footer {
+                padding: 10px 45px;
+            }
+        }
+
+        @media (min-width:390px) {
+            #contenido_footer {
+                padding: 10px 85px;
+            }
+        }
+
+
+
+        #arriba_footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .menus_footer {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .menus_footer span {
+            color: #1AA9FF;
+            font-weight: bold;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .info_footer {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .info_footer a {
+            text-decoration: none;
+            color: #ddd;
+            font-weight: bold;
+            transition: color 1s;
+        }
+
+        .info_footer a:hover {
+            color: #1AA9FF;
+        }
+
+        #redes_sociales {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #logo_footer {
+            width: 100%;
+            max-width: 200px;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: white;
+            background: #222;
+            border: 2px solid #1AA9FF;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-icon i {
+            transition: all 1s;
+        }
+
+        .social-icon #twitter:hover {
+            color: #1AA9FF;
+        }
+
+        .social-icon #instagram:hover {
+            color: #e4405f;
+        }
+
+        .social-icon #discord:hover {
+            color: #7289da;
+        }
+
+        .social-icon #tiktok:hover {
+            color: #69c9d0;
+        }
+
+        /* Media queries para hacer el diseño responsive */
+        @media (min-width: 768px) {
+            #arriba_footer {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 40px;  
+            }
+            .menus_footer {
+                text-align: left;
+            }
+        }
+        @media (min-width: 1024px) {
+            #arriba_footer {
+                gap: 50px;
+            }
+            .menus_footer {
+                min-width: 230px;
+            }
+        }
+        @media (min-width: 768px) and (max-width: 1024px) {
+					.social-icon {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 30px;
+                        color: white;
+                        background: #222;
+                        border: 2px solid #1AA9FF;
+                        width: 70px;
+                        height: 70px;
+                        border-radius: 50%;
+                        transition: all 0.3s;
+                        text-decoration: none;
+                    }
+					#logo_footer{
+						width:100%;
+					}
+					.menus_footer span {
+						font-size:35px;
+					}
+            #arriba_footer {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 100px;
+                margin-left: 350px;
+				font-size:30px;
+            }
+            .menus_footer {
+                width: 100%;
+            }
+            #redes_sociales {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="contenido_footer">
+        <div id="arriba_footer">
+            <div class="menus_footer">
+                <span>OXYGENGAMING</span>
+                <div class="info_footer">
+                    <a href="https://oxygengaming.es/sobre-nosotros/">SOBRE NOSOTROS</a>
+                    <a href="https://oxygengaming.es/patrocinadores/">PATROCINADORES</a>
+                    <a href="https://oxygengaming.es/noticias/">NOTICIAS</a>
+                    <a href="https://oxygengaming.es/tienda/">TIENDA</a>
+                    <a href="https://oxygengaming.es/oxy-club/">OXYCLUB</a> 
+                    <a href="https://oxygengaming.es/contacto/">CONTACTO</a>
+                </div>
+            </div>
+
+            <div class="menus_footer">
+                <span>EQUIPOS</span>
+                <div class="info_footer">
+                    <a href="https://oxygengaming.es/equipos/#leagueoflegends">LEAGUE OF LEGENDS</a>
+                    <a href="">VALORANT</a>
+                    <a href="https://oxygengaming.es/creadores/">CREADORES</a>
+                </div>
+            </div>
+
+            <div class="menus_footer">
+                <span>POLÍTICAS</span>
+                <div class="info_footer">
+                    <a href="https://oxygengaming.es/aviso-legal/">AVISO LEGAL</a>
+                    <a href="https://oxygengaming.es/politica-de-privacidad/">PRIVACIDAD</a>
+                    <a href="https://oxygengaming.es/politica-de-cookies/"> COOKIES</a>
+                </div>
+            </div>
+
+            <div id="redes_sociales">
+                <a href="https://oxygengaming.es/"><img id="logo_footer" src="https://oxygengaming.es/wp-content/uploads/2025/03/Logo_Blue.png" alt="Oxygen Gaming Logo"></a>
+                <div class="social-links">
+                    <a href="https://twitter.com/GamingOxygen" target="_blank" class="social-icon"><i id="twitter" class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/GamingOxygen" target="_blank" class="social-icon"><i id="instagram" class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@oxg_esports?lang=es" target="_blank" class="social-icon"><i id="tiktok" class="fab fa-tiktok"></i></a>
+                    <a href="https://discord.gg/Udsstfpeze" target="_blank" class="social-icon"><i id="discord" class="fab fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
