@@ -62,9 +62,8 @@ class Naxos_Shortcode_Blog {
 									<p>' . $image_output . '<span class="blog-category">' . $category . '</span></p>
 									<div class="blog-wrapper">
 										<div class="blog-text">
-											<div class="blog-about"><span>' . wp_kses_post( $author ) . '</span><span>' . esc_html( get_the_time( get_option( 'date_format' ) ) ) . '</span></div>
 											<h4><a href="' . esc_url( get_permalink() ) . '">' . esc_html( get_the_title() ) . '</a></h4>
-											' . $post_content . '
+											<div class="blog-about"><span>' . wp_kses_post( $author ) . '</span><span>' . esc_html( get_the_time( get_option( 'date_format' ) ) ) . '</span></div>
 										</div>
 									</div>
 								</div>
