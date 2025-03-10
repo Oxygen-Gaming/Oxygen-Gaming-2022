@@ -1,0 +1,137 @@
+/* ======================== */
+/* Estilos para monitores   */
+/* ======================== */
+@media (min-width: 1024px) {
+    .backstretch img {
+        width: 100% !important;
+        height: 130% !important;
+        object-fit: cover;
+    }
+
+    #mainNav .logo a.navbar-brand1 img,
+    #mainNav .logo a.navbar-brand2 img {
+        max-width: 110px !important;
+        height: auto !important;
+        margin-left: 10px !important;
+    }
+
+    #mainNav #menu-main-menu {
+        margin-right: 180px;
+    }
+
+    footer .footer-widgets .container .row {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* ================================ */
+/* Ajustes del carrusel de imágenes */
+/* ================================ */
+.carrusel_marcas .clients-slider .owl-item img {
+    width: 75%;
+    max-width: 150px;
+    height: auto;
+}
+
+/* ================================ */
+/* Ocultar CAPTCHA y Cookies */
+/* ================================ */
+.grecaptcha-badge,
+#cookies-eu-banner-closed {
+    display: none !important;
+}
+
+/* ================================ */
+/* Estilos para móviles y tablets */
+/* ================================ */
+@media (max-width: 1280px) {
+    #home {
+        height: 100vh;
+        width: 60vh;
+    }
+
+    .backstretch img {
+        width: 200% !important;
+        height: 100% !important;
+        object-fit: cover;
+    }
+
+    .carrusel_marcas .clients-slider .owl-item img {
+        width: 45%;
+        height: auto;
+    }
+
+    #mainNav .logo img {
+        max-width: 100px !important;
+        margin-left: 0;
+    }
+}
+
+
+
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	
+	
+	
+    #menu-item-188 .dropdown-arrow {
+        margin-left: 100px;
+    }
+
+    #menu-item-203 .dropdown-arrow {
+        margin-left: 10px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    #menu-item-188 .dropdown-arrow {
+        margin-left: 100px;
+    }
+
+    #menu-item-203 .dropdown-arrow {
+        margin-left: 10px;
+    }
+}
+
+/* ================================ */
+/* Ajustes generales */
+/* ================================ */
+#menu-main-menu {
+    margin-right: 100px;
+}
+
+#home .wave-effect {
+    display: none;
+}
+
+#enlace_inicio {
+    position: absolute;
+    margin-left: 550px;
+    margin-top: 500px;
+}
+
+#enlace_inicio button {
+    width: 200px;
+}
+
+#custom_html-4 {
+    margin-right: 700px;
+}
+
+@media (max-width: 1920px) {
+    #custom_html-4 {
+        margin-right: 850px;
+    }
+}
+
+@media (max-width: 1720px) {
+    #custom_html-4 {
+        margin-right: 700px;
+    }
+}
