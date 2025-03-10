@@ -1,0 +1,320 @@
+<!--
+  Este archivo HTML define una página web que muestra un equipo de creadores de contenido.
+  La estructura principal incluye estilos CSS y una sección de contenido con información sobre los creadores.
+
+  Estructura del documento:
+  - DOCTYPE y configuración básica del documento HTML.
+  - Enlace a una hoja de estilos externa de Font Awesome para iconos de redes sociales.
+  - Estilos CSS internos para la apariencia y disposición de los elementos en la página.
+  - Sección principal que contiene la lista de creadores de contenido.
+
+  Estilos CSS:
+  - Estilos generales para el cuerpo del documento, incluyendo fuente, márgenes y color de fondo.
+  - Estilos específicos para la sección de equipos de creadores, incluyendo disposición y apariencia de los elementos.
+  - Estilos para los elementos individuales de los creadores, incluyendo efectos de transición y hover.
+  - Estilos para la información adicional que aparece al pasar el mouse sobre un creador.
+  - Estilos para los iconos de redes sociales y su comportamiento al interactuar con ellos.
+  - Media queries para ajustar el diseño en dispositivos móviles y pantallas de diferentes tamaños.
+
+  Sección de contenido:
+  - Contenedor principal de la sección de equipos de creadores.
+  - Lista de creadores dividida en dos grupos de jugadores.
+  - Cada creador tiene un contenedor con una imagen de fondo, información adicional y enlaces a sus redes sociales.
+  - La información adicional incluye el nombre del creador y enlaces a sus perfiles en Twitter, Instagram y Twitch.
+
+  Script JavaScript:
+  - Función para mostrar por defecto la lista de jugadores al cargar la página.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .equipos_creadores {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .juego h3 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    #b_jugadores {
+      background-color: #1AA9FF;
+      color: #fff;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+    }
+
+    #b_coaches {
+      background-color: #cacaca;
+      color: #fff;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+    }
+
+    .equipos-lista {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+      
+ 
+    }
+
+    .equipo_creadores {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-align: center;
+      width: 30vh;
+      height: 50vh;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      position: relative;
+     
+    }
+
+    .equipo_creadores:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Ocultar el paralelogramo inicialmente */
+    .equipo_creadores_info {
+      background-color: #1AA9FF;
+      transform: skewY(-10deg);
+      width: 100%;
+      height: 35%;
+      position: absolute;
+      right: -100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: right 0.5s ease-in-out;
+      
+    }
+
+    /* Mostrar el paralelogramo al pasar el mouse */
+    .equipo_creadores:hover .equipo_creadores_info {
+      right: 0;
+    }
+
+    /* Ajustar tamaño y color del texto */
+    .equipo_creadores_info h4 {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .jugadores_creadores, .coaches_creadores {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      
+    }
+    /* Redes sociales */
+    .equipo_creadores_social {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .equipo_creadores_social a {
+      text-decoration: none;
+      color: white;
+      font-size: 25px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .equipo_creadores_social a:hover {
+      transform: scale(1.2);
+    }
+
+
+    /* Media Queries para dispositivos móviles */
+    @media screen and (max-width: 768px) {
+      .coaches_creadores{
+        flex-direction: column;
+      }
+      .jugadores_creadores {
+          flex-direction: column;
+      }
+      .equipo_creadores{
+          width: 40vh;
+      }
+      .equipo_creadores_info {
+        right: 0;
+        transform: skewY(-10deg);
+        height: 20%;
+        transition: none;
+        padding-bottom: 20px;
+      }
+      .box_botones{
+        margin-right: 50%;
+     }
+      .botones{
+        background-color: #cacaca;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width:1024px) {
+      .coaches_creadores{
+        flex-direction: column;
+      }
+      .jugadores_creadores {
+          flex-direction: column;
+      }
+      .equipo_creadores{
+          width: 40vh;
+      }
+      .equipo_creadores_info {
+        right: 0;
+        transform: skewY(-10deg);
+        height: 20%;
+        transition: none;
+        padding-bottom: 4px;
+      }
+      .box_botones{
+        margin-right: 0;
+      }
+      .botones{
+        background-color: #cacaca;
+      }
+    }
+
+    @media (max-width:320px) {
+      .equipo_creadores_social a {
+        font-size: 20px;
+      }
+      .equipo_creadores_info h4 {
+        font-size: 15px;
+      }
+    }
+
+    #jugador1_creadores { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/03/Camiseta_Josemi-1.jpg"); }
+    #jugador2_creadores { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/04/Camiseta_AngelySaras_2.jpg"); }
+    #jugador3_creadores { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/03/Camiseta_Sandra-1.jpg"); }
+    #jugador4_creadores { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/04/imagen_2024-04-24_200805945.png"); }
+    #jugador5_creadores { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/03/Camiseta_Joselyto_1-1.jpg"); }
+    #jugador6_creadores { background-image: url("https://oxygengaming.es/wp-content/uploads/2022/12/Camiseta_Viterlo.jpg"); }
+
+  </style>
+</head>
+<body>
+
+  <section class="equipos_creadores"> 
+    <div class="juego"> 
+      <div class="equipos-lista">
+        <!-- Jugadores (por defecto visibles) -->
+        <div class="jugadores_creadores">
+          <div id="jugador1_creadores" class="equipo_creadores">
+            <div class="equipo_creadores_info">
+              <div class="equipo_creadores_social">
+                <a target="_blank" href="https://x.com/Josemicod5"><i class="fa-brands fa-x-twitter"></i></a>
+                <a target="_blank" href="https://www.instagram.com/josemicod5/"><i class="fa-brands fa-instagram"></i></a>
+                <a target="_blank" href="https://www.twitch.tv/josemicod5rl"><i class="fa-brands fa-twitch"></i></a>
+              </div>
+              <h4>José Miguel «Josemi»</h4>
+            </div>
+          </div>
+          
+          <div id="jugador2_creadores" class="equipo_creadores">
+            <div class="equipo_creadores_info">
+              <div class="equipo_creadores_social">
+                <a target="_blank" href="https://x.com/AngelySaras"><i class="fa-brands fa-x-twitter"></i></a>
+                <a target="_blank" href="https://www.instagram.com/angelysara"><i class="fa-brands fa-instagram"></i></a>
+                <a target="_blank" href="https://www.twitch.tv/angelysaras"><i class="fa-brands fa-twitch"></i></a>
+              </div>
+              <h4>ÁngelySaras</h4>
+            </div>
+          </div>
+          
+          <div id="jugador3_creadores" class="equipo_creadores">
+            <div class="equipo_creadores_info">
+              <div class="equipo_creadores_social">
+                <a target="_blank" href="https://x.com/Sandralife9"><i class="fa-brands fa-x-twitter"></i></a>
+                <a target="_blank" href="https://www.instagram.com/Sandralife5"><i class="fa-brands fa-instagram"></i></a>
+                <a target="_blank" href="https://www.twitch.tv/SandraLife"><i class="fa-brands fa-twitch"></i></a>
+              </div>
+              <h4>Sandra «SandraLife»</h4>
+            </div>
+          </div>
+          
+          <div id="jugador4_creadores" class="equipo_creadores">
+            <div class="equipo_creadores_info">
+              <div class="equipo_creadores_social">
+                <a target="_blank" href="https://x.com/twitchwachinani"><i class="fa-brands fa-x-twitter"></i></a>
+                <a target="_blank" href="https://www.instagram.com/wachinanii_"><i class="fa-brands fa-instagram"></i></a>
+                <a target="_blank" href="https://www.twitch.tv/wachinanii"><i class="fa-brands fa-twitch"></i></a>
+              </div>
+              <h4>Antonio «Wachinanii» Adrados</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="jugadores_creadores">
+          <div id="jugador5_creadores" class="equipo_creadores">
+            <div class="equipo_creadores_info">
+              <div class="equipo_creadores_social">
+                <a target="_blank" href="https://x.com/JoselytoOG"><i class="fa-brands fa-x-twitter"></i></a>
+                <a target="_blank" href="https://www.instagram.com/joselyto.tv"><i class="fa-brands fa-instagram"></i></a>
+                <a target="_blank" href="https://www.twitch.tv/joselyto"><i class="fa-brands fa-twitch"></i></a>
+              </div>
+              <h4>Jose Ángel «Joselyto» Conde</h4>
+            </div>
+          </div>
+
+          <div id="jugador6_creadores" class="equipo_creadores">
+            <div class="equipo_creadores_info">
+              <div class="equipo_creadores_social">
+                <a target="_blank" href="https://x.com/Viterlo"><i class="fa-brands fa-x-twitter"></i></a>
+                <a target="_blank" href="https://www.instagram.com/Viterlo"><i class="fa-brands fa-instagram"></i></a>
+                <a target="_blank" href="https://www.twitch.tv/viterlo"><i class="fa-brands fa-twitch"></i></a>
+              </div>
+              <h4>Victor «Viterlo» Tercero</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function mostrarDefault(){
+    // Mostrar jugadores y ocultar coaches
+      document.querySelector('.jugadores_creadores').style.display = 'flex';
+    }
+    mostrarDefault()
+  </script>
+</body>
+</html>
+
+<!-- Configuracion CSS Adiccional -->
+<!-- section.page h1, .blog-post h1, .comment h1, section.page h2, .blog-post h2, .comment h2, section.page h3, .blog-post h3, .comment h3, section.page h4, .blog-post h4, .comment h4, section.page h5, .blog-post h5, .comment h5, section.page h6, .blog-post h6, .comment h6 {
+  margin-top: 0 !important;
+}
+.equipo_creadores_social {
+  margin-top: 20px;
+} -->

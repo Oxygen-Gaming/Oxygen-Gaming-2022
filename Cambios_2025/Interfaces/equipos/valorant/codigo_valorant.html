@@ -1,0 +1,337 @@
+<!--
+  Este archivo HTML define una interfaz para mostrar equipos de Valorant.
+  La estructura principal incluye estilos CSS y botones para alternar entre jugadores y coaches.
+
+  Estructura del documento:
+  - DOCTYPE y configuración básica del documento HTML.
+  - Estilos CSS internos para la apariencia y disposición de los elementos.
+  - Sección principal que contiene botones de alternancia y listas de jugadores y coaches.
+
+  Estilos CSS:
+  - Estilos generales para el cuerpo del documento, incluyendo fuente, márgenes, y fondo.
+  - Estilos específicos para los contenedores de equipos, botones, y elementos individuales de jugadores y coaches.
+  - Media queries para ajustar el diseño en dispositivos móviles y tablets.
+
+  Sección de contenido:
+  - Botones para alternar entre la vista de jugadores y coaches.
+  - Listas de jugadores y coaches con imágenes de fondo y nombres.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .equipos_valorant {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .juego h3 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .box_botones{
+        display: flex;
+        justify-content: center;
+        align-items: start;
+    }
+    .botones {
+      display: flex;
+      justify-content: start;
+      background-color: #cacaca;
+      border-radius: 25px;
+      width: 30%;
+      margin: auto;
+    }
+
+    .botones button {
+      flex: 1;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: #cacaca;
+      transition: all 0.3s ease;
+      border: none;
+      border-radius: 25px;
+    }
+
+    #b_jugadores {
+      background-color: #1AA9FF;
+      color: #fff;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+    }
+
+    #b_coaches {
+      background-color: #cacaca;
+      color: #fff;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+    }
+
+    .equipos-lista {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+ 
+    }
+
+    .equipo_valorant {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-align: center;
+      width: 25vh;
+      height: 50vh;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      position: relative;
+     
+    }
+
+    .equipo_valorant:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Ocultar el paralelogramo inicialmente */
+    .equipo_valorant_info {
+      background-color: #1AA9FF;
+      transform: skewY(-10deg);
+      width: 100%;
+      height: 25%;
+      position: absolute;
+      bottom: 0;
+      right: -100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: right 0.5s ease-in-out;
+      padding-bottom: 10px;
+    }
+
+    /* Mostrar el paralelogramo al pasar el mouse */
+    .equipo_valorant:hover .equipo_valorant_info {
+      right: 0;
+    }
+
+    /* Ajustar tamaño y color del texto */
+    .equipo_valorant_info h4 {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .equipo_valorant_info p {
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+      font-style: italic;
+    }
+
+    .jugadores_valorant, .coaches_valorant {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      
+    }
+
+    /* Media Queries para dispositivos móviles */
+    @media screen and (max-width: 768px) {
+      .coaches_valorant{
+        flex-direction: column;
+      }
+      .jugadores_valorant {
+          flex-direction: column;
+      }
+      .equipo_valorant{
+          width: 40vh;
+
+      }
+      .equipo_valorant_info {
+        right: 0 !important;
+        transform: skewY(-10deg) !important;
+        height: 20% !important;
+        transition: none !important;
+        padding-bottom: 20px;
+      }
+      .box_botones{
+        margin-right: 50%;
+     }
+      .botones{
+        background-color: #cacaca;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width:1024px) {
+      .coaches_valorant{
+        flex-direction: column;
+      }
+      .coaches_valorant h3{
+        margin: 0vh !important;
+        font-size: 50px;
+        margin-bottom: 2vh !important;
+      }
+      .jugadores_valorant {
+          flex-direction: column;
+      }
+      .equipo_valorant{
+          width: 40vh;
+      }
+      .equipo_valorant_info {
+        right: 0;
+        transform: skewY(-10deg);
+        height: 30%;
+        transition: none;
+        padding-bottom:  50px !important;
+      }
+      .equipo_valorant_info h4 {
+        margin: 0vh !important;
+        font-size: 50px;
+        margin-bottom: 2vh !important;
+      }
+      .box_botones{
+        margin-right: 0;
+      }
+      .botones{
+        background-color: #cacaca;
+        width: 40%;
+      }
+
+    }
+
+    #jugador1_valorant { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/03/Camiseta_Tamoz.jpg"); }
+    #jugador2_valorant { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/03/Camiseta_Nyx.jpg"); }
+    #jugador3_valorant { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/03/Camiseta_Air.png"); }
+    #jugador4_valorant { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/03/Camiseta_Cyraxx.jpg"); }
+    #jugador5_valorant { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/03/Camiseta_Wrongo.jpg"); }
+    #coach1_valorant { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/03/Camiseta_Sapartan.jpg"); }
+    #equipo1_valorant { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/03/Camiseta_Alejandro.jpg"); }
+    #equipo2_valorant { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/03/Camiseta_Kinno.jpg"); }
+  </style>
+</head>
+<body>
+
+  <section class="equipos_valorant">
+    <!-- Botones para alternar entre jugadores y coaches -->
+    <div class="box_botones">
+        <div class="botones">
+            <button id="b_jugadores" onclick="mostrarJugadores()">Jugadores</button>
+            <button id="b_coaches" onclick="mostrarCoaches()">Staff</button>
+        </div>
+    </div>
+    
+    <div class="juego"> 
+      <div class="equipos-lista">
+        <!-- Jugadores (por defecto visibles) -->
+        <div class="jugadores_valorant">
+          <div id="jugador1_valorant" class="equipo_valorant">
+            <div class="equipo_valorant_info">
+              <h4>TamoZ</h4>
+            </div>
+          </div>
+          
+          <div id="jugador2_valorant" class="equipo_valorant">
+            <div class="equipo_valorant_info">
+              <h4>Nyx</h4>
+            </div>
+          </div>
+          
+          <div id="jugador3_valorant" class="equipo_valorant">
+            <div class="equipo_valorant_info">
+              <h4>Air</h4>
+            </div>
+          </div>
+          
+          <div id="jugador4_valorant" class="equipo_valorant">
+            <div class="equipo_valorant_info">
+              <h4>cyraXx</h4>
+            </div>
+          </div>
+          
+          <div id="jugador5_valorant" class="equipo_valorant">
+            <div class="equipo_valorant_info">
+              <h4>Wrongo</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coaches (inicialmente ocultos) -->
+        <div class="coaches_valorant">
+          <div id="coach1_valorant" class="equipo_valorant">
+            <div class="equipo_valorant_info">
+              <h3 style="color: white;">Spartan</h3>
+            </div>
+            
+          </div>
+          <div id="equipo1_valorant" class="equipo_valorant">
+            <div class="equipo_valorant_info">
+              <h3 style="color: white;">Alejandro</h3>
+            </div>
+            
+          </div>
+          <div id="equipo2_valorant" class="equipo_valorant">
+            <div class="equipo_valorant_info">
+              <h3 style="color: white;">Kinno</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+    function mostrarDefault(){
+    // Mostrar jugadores y ocultar coaches
+      document.querySelector('.jugadores_valorant').style.display = 'flex';
+      document.querySelector('.coaches_valorant').style.display = 'none';
+    }
+    
+    // Función para mostrar los jugadores y ocultar los coaches (por defecto)
+    function mostrarJugadores() {
+      // Mostrar jugadores y ocultar coaches
+      document.querySelector('.jugadores_valorant').style.display = 'flex';
+      document.querySelector('.coaches_valorant').style.display = 'none';
+
+      document.getElementById('b_jugadores').style.backgroundColor = "#1AA9FF"
+      document.getElementById('b_coaches').style.backgroundColor = "#cacaca"
+      
+    }
+  
+    // Función para mostrar los coaches y ocultar los jugadores
+    function mostrarCoaches() {
+      // Mostrar coaches y ocultar jugadores
+      document.querySelector('.jugadores_valorant').style.display = 'none';
+      document.querySelector('.coaches_valorant').style.display = 'flex';
+
+      document.getElementById('b_jugadores').style.backgroundColor = "#cacaca"
+      document.getElementById('b_coaches').style.backgroundColor = "#1AA9FF"
+    
+    }
+    // Llamada a la función mostrarJugadores() para que se ejecute por defecto al cargar la página
+    mostrarJugadores()
+  </script>
+</body>
+</html>

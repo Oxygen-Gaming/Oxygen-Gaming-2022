@@ -1,0 +1,133 @@
+<!--
+    Este archivo HTML define una página web que muestra tarjetas de información sobre diferentes aspectos de Oxygen Gaming.
+    La estructura principal incluye estilos CSS y una sección de contenido con tarjetas informativas.
+
+    Estructura del documento:
+    - DOCTYPE y configuración básica del documento HTML.
+    - Estilos CSS internos para la apariencia y disposición de los elementos en la página.
+    - Sección principal que contiene las tarjetas informativas.
+
+    Estilos CSS:
+    - Estilos generales para el cuerpo del documento, incluyendo fuente, márgenes y color de fondo.
+    - Estilos específicos para la sección de tarjetas, incluyendo disposición y apariencia de los elementos.
+    - Estilos para las tarjetas individuales, incluyendo efectos de transición y hover.
+    - Estilos para las imágenes de fondo de las tarjetas, asegurando que todas tengan el mismo tamaño y efectos de hover.
+    - Media queries para ajustar el diseño en dispositivos móviles y pantallas de diferentes tamaños.
+
+    Sección de contenido:
+    - Contenedor principal de la sección de tarjetas.
+    - Tres tarjetas informativas con imágenes de fondo.
+    - Cada tarjeta tiene un título, un botón con enlace a más información.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esports Cards</title>
+    <style>
+
+        #c1 {
+            background-image: url("https://oxygengaming.es/wp-content/uploads/2025/03/Home-Competicion.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            width: 40vh;
+
+        }
+
+        #c2 {
+            background-image: url("https://oxygengaming.es/wp-content/uploads/2025/03/Home-Eventos.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            width: 40vh;
+
+        }
+
+        #c3 {
+            background-image: url("https://oxygengaming.es/wp-content/uploads/2025/03/Home-Comunidad-scaled.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            width: 40vh;
+
+        }
+               
+
+        .container_sobre_nosotros {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card_sobre_nosotros {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .card_sobre_nosotros h2 {
+            margin: 0;
+            padding: 20px;
+            color: white;
+            font-size: 30px;
+        }
+
+        .card_sobre_nosotros p {
+            padding: 0 20px 20px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .card_sobre_nosotros button {
+            background-color: #1894fc;
+            border: none;
+            color: white;
+            margin-left: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: 1s;
+        }
+
+        .card_sobre_nosotros button:hover {
+            background-color: #126db8;
+        }
+
+        .card_sobre_nosotros a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container_sobre_nosotros"> 
+        <div id="c1" class="card_sobre_nosotros">
+            <h2>Competición</h2>
+            <a href="https://oxygengaming.es/sobre-nosotros/"><button>Conoce nuestros equipos</button></a>
+        </div>
+        <div id="c2" class="card_sobre_nosotros">
+            <h2>Eventos</h2>
+            <a href="https://oxygengaming.es/creadores/"><button>Mas Información</button></a>
+        </div>
+        <div id="c3" class="card_sobre_nosotros">
+            <h2>Comunidad </h2>
+            <a href="https://oxygengaming.es/oxy-club/"><button>Únete al OxyClub</button></a>
+        </div>
+    </div>
+</body>
+</html> 

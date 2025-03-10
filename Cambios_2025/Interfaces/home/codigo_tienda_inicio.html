@@ -1,0 +1,204 @@
+<!--
+    Este archivo HTML define una página web que muestra una colección de productos de Oxygen Gaming.
+    La estructura principal incluye estilos CSS y una sección de contenido con información sobre los productos.
+
+    Estructura del documento:
+    - DOCTYPE y configuración básica del documento HTML.
+    - Estilos CSS internos para la apariencia y disposición de los elementos en la página.
+    - Sección principal que contiene la lista de productos.
+
+    Estilos CSS:
+    - Estilos generales para el cuerpo del documento, incluyendo fuente, márgenes y color de fondo.
+    - Estilos específicos para la sección de productos, incluyendo disposición y apariencia de los elementos.
+    - Estilos para los elementos individuales de los productos, incluyendo efectos de transición y hover.
+    - Estilos para las imágenes de los productos, asegurando que todas tengan el mismo tamaño y efectos de hover.
+    - Media queries para ajustar el diseño en dispositivos móviles y pantallas de diferentes tamaños.
+
+    Sección de contenido:
+    - Contenedor principal de la sección de productos.
+    - Lista de productos con imágenes frontales y traseras.
+    - Cada producto tiene un contenedor con una imagen de fondo, información adicional y enlaces a la tienda en línea.
+    - La información adicional incluye el nombre del producto y su precio.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Colección</title>
+    <style>
+        /* Estilos generales para el cuerpo de la página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+
+        /* Contenedor de los productos */
+        .products_tienda {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+
+        /* Estilos para cada producto */
+        .product_tienda {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            flex: 1 1 45%;
+            max-width: 300px;
+            margin: 10px;
+            height: auto;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* Hacer que todas las imágenes tengan el mismo tamaño */
+        .product_tienda img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        /* Imagen trasera inicialmente oculta */
+        .product_tienda img.back-image {
+            position: absolute;
+            width: 100%;
+            height: 400px;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        /* Mostrar la imagen trasera al pasar el ratón */
+        .product_tienda:hover img.back-image {
+            opacity: 1;
+        }
+
+        /* Ocultar la imagen frontal al pasar el ratón */
+        .product_tienda:hover img.front-image {
+            opacity: 0;
+        }
+
+        /* Estilos para el título del producto */
+        .product_tienda h3 {
+            font-size: 18px;
+            margin: 5px 0;
+            color: #ffffff;
+        }
+
+        /* Estilos para el precio del producto */
+        .product_tienda p {
+            font-size: 16px;
+            color: #ffffff;
+            margin: 5px 0;
+        }
+
+        .color_box {
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Para tablets y móviles grandes (hasta 1024px) */
+        @media (max-width: 1024px) {
+            .products_tienda {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        /* Para móviles (hasta 768px) */
+        @media (max-width: 768px) {
+            .products_tienda {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                margin: 10px;
+            }
+
+            .product_tienda img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+            
+            }
+            .product_tienda img.back-image {
+            position: absolute;
+            width: 100%;
+            height: 190px;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: 1;
+            }
+            /* Mostrar la imagen trasera al pasar el ratón */
+            .product_tienda:hover img.back-image {
+                opacity: 0;
+            }
+            /* Ocultar la imagen frontal al pasar el ratón */
+            .product_tienda:hover img.front-image {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor principal de los productos -->
+    <div class="products_tienda">
+        <!-- Producto 1 -->
+        <div class="product_tienda">
+            <div class="color_box">
+                <a href="https://shop.oxygengaming.es/index.php/product/camiseta-oxygen-gaming/">
+                    <img class="front-image" src="https://oxygengaming.es/wp-content/uploads/2025/03/Camiseta_Basica_Frontal.png" alt="Camiseta Frontal">
+                    <img class="back-image" src="https://oxygengaming.es/wp-content/uploads/2025/03/Camiseta_Basica_Trasera.png" alt="Camiseta Trasera">
+                </a>
+            </div>
+            <h3>Camiseta Oxygen Gaming</h3>
+            <p>14,95 €</p>
+        </div>
+        <!-- Producto 2 -->
+        <div class="product_tienda">
+            <div class="color_box">
+                <a href="https://shop.oxygengaming.es/index.php/product/camiseta-tecnica-oxygen-gaming/">
+                    <img class="front-image" src="https://oxygengaming.es/wp-content/uploads/2025/03/Camiseta_Frontal.png" alt="Camiseta Técnica Frontal">
+                    <img class="back-image" src="https://oxygengaming.es/wp-content/uploads/2025/03/Camiseta_Trasera.png" alt="Camiseta Técnica Trasera">
+                </a>
+            </div>
+            <h3>Camiseta Técnica Oxygen Gaming</h3>
+            <p>29,90 €</p>
+        </div>
+        <!-- Producto 3 -->
+        <div class="product_tienda">
+            <div class="color_box">
+                <a href="https://shop.oxygengaming.es/index.php/product/polo-oxygen-gaming/">
+                    <img class="front-image" src="https://oxygengaming.es/wp-content/uploads/2025/03/Camiseta_Polo_Frontal.png" alt="Polo Frontal">
+                    <img class="back-image" src="https://oxygengaming.es/wp-content/uploads/2025/03/Camiseta_Polo_Trasera-Photoroom.png" alt="Polo Trasero">
+                </a>
+            </div>
+            <h3>Polo Oxygen Gaming</h3>
+            <p>19,95 €</p>
+        </div>
+        <!-- Producto 4 -->
+        <div class="product_tienda">
+            <div class="color_box">
+                <a href="https://shop.oxygengaming.es/index.php/product/sudadera-oxygen-gaming/">
+                    <img class="front-image" src="https://oxygengaming.es/wp-content/uploads/2025/03/Sudadera-Frontal.png" alt="Sudadera Frontal">
+                    <img class="back-image" src="https://oxygengaming.es/wp-content/uploads/2025/03/Sudadera-Trasera.png" alt="Sudadera Trasero">
+                </a>
+            </div>
+            <h3>Sudadera Oxygen Gaming</h3>
+            <p>24,95 €</p>
+        </div>
+    </div>
+</body>
+</html>

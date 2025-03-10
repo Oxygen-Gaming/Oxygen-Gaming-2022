@@ -1,0 +1,132 @@
+<!--
+    Este archivo HTML define una página web que muestra un botón interactivo.
+    La estructura principal incluye estilos CSS y un script JavaScript para cambiar el texto y URL del botón.
+
+    Estructura del documento:
+    - DOCTYPE y configuración básica del documento HTML.
+    - Estilos CSS internos para la apariencia y disposición del botón.
+    - Sección principal que contiene el botón dentro de un enlace.
+
+    Estilos CSS:
+    - Estilos generales para el botón con clase fancy-blue-button, incluyendo fondo, color, tamaño, bordes y efectos de transición.
+    - Estilos específicos para el botón al pasar el ratón por encima, incluyendo efectos de brillo y transformación.
+    - Animación para el efecto de brillo del botón.
+    - Media queries para ajustar el diseño del botón en dispositivos móviles.
+
+    Sección de contenido:
+    - Enlace que contiene el botón con clase fancy-blue-button y un identificador único.
+
+    Script JavaScript:
+    - Función para cambiar el texto y URL del botón basado en un array de objetos.
+    - Observador de mutaciones para detectar cambios en un contenedor de slider y actualizar el botón en consecuencia.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* Estilos para el botón con clase fancy-blue-button */
+    .fancy-blue-button {
+        background: linear-gradient(90deg, #1AA9FF, rgb(79, 123, 206));
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        width: 40%;
+        border-radius: 30px;
+        padding: 15px 50px;
+        min-width: 250px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: all 0.4s ease-in-out;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: center;
+        display: block;
+        margin: 0 auto; /* Centrar el botón horizontalmente */
+        box-sizing: border-box;
+    }
+
+    /* Estilos para el botón cuando se pasa el ratón por encima */
+    .fancy-blue-button:hover {
+        background: linear-gradient(90deg, #1AA9FF, rgb(79, 123, 206));
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        transform: scale(1.1);
+        color: #ffffff;
+        animation: glowing 1.5s infinite;
+    }
+
+    /* Animación para el efecto de brillo del botón */
+    @keyframes glowing {
+        0% { box-shadow: 0 0 5px #1AA9FF, 0 0 10px #ffffff; }
+        50% { box-shadow: 0 0 20px #1AA9FF, 0 0 30px #ffffff; }
+        100% { box-shadow: 0 0 5px #1AA9FF, 0 0 10px #ffffff; }
+    }
+
+    /* Media query para ajustar el botón en dispositivos móviles */
+    @media (max-width: 600px) {
+        .fancy-blue-button {
+            width: 40%; /* Ajustar el ancho del botón en dispositivos móviles */
+            min-width: unset; /* Eliminar el ancho mínimo en dispositivos móviles */
+        }
+    }
+    </style>
+        
+</head>
+<body>
+    <!-- Enlace que contiene el botón -->
+    <a href="https://oxygengaming.es/oxy-club/" id="enlace_inicio">
+        <button id="boton_inicio" class="fancy-blue-button">Unirse a Oxyclub</button>
+    </a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        console.log("EL SCRIPT HA SIDO ACTIVADO");
+
+        // Array de objetos con las URLs y textos para el botón
+        const links = [
+            { url: "https://shop.oxygengaming.es/index.php/product-category/ropa/", text: "Ver Camisetas" },
+            { url: "https://oxygengaming.es/oxy-club/", text: "Unirse a Oxyclub" }
+        ];
+
+        let index_de_los_links = 0; // Índice para recorrer los links
+        let lastChangeTime = 0; // Marca de tiempo para controlar actualizaciones
+
+        // Función para cambiar el texto y URL del botón
+        function changeButton() {
+            console.log("Cambiando botón...");
+            const enlace = document.getElementById("enlace_inicio");
+            const boton = document.getElementById("boton_inicio");
+
+            boton.textContent = links[index_de_los_links].text;
+            enlace.href = links[index_de_los_links].url;
+
+            index_de_los_links = (index_de_los_links + 1) % links.length;
+        }
+
+        // Selecciona el contenedor del slider
+        const sliderContainer = document.querySelector(".backstretch");
+        if (sliderContainer) {
+            // Observador de mutaciones para detectar cambios en el slider
+            const observer = new MutationObserver(() => {
+                const currentTime = Date.now();
+
+                // Solo actualiza el botón si han pasado 1000 ms desde el último cambio
+                if (currentTime - lastChangeTime > 1000) {
+                    console.log("Cambio detectado en el slider...");
+                    lastChangeTime = currentTime;
+                    changeButton();
+                }
+            });
+
+            // Configura el observador para observar cambios en el contenedor del slider
+            observer.observe(sliderContainer, { attributes: true, childList: true, subtree: true });
+        } else {
+            console.error("No se encontró el contenedor del slider (.backstretch).");
+        }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+section.page h1, .blog-post h1, .comment h1, section.page h2, .blog-post h2, .comment h2, section.page h3, .blog-post h3, .comment h3, section.page h4, .blog-post h4, .comment h4, section.page h5, .blog-post h5, .comment h5, section.page h6, .blog-post h6, .comment h6 {
+    margin-top: 0 !important;
+}
+.equipo_creadores_social {
+    margin-top: 20px;
+}

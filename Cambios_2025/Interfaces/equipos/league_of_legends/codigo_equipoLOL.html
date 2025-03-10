@@ -1,0 +1,351 @@
+<!--
+  DESCRIPCIÓN:
+  Esta página HTML muestra una interfaz para un equipo de League of Legends (LoL) con dos secciones principales: jugadores y coaches (staff). 
+  La página permite alternar entre la visualización de jugadores y coaches mediante botones interactivos.
+
+  ESTRUCTURA:
+  - <head>: Contiene metadatos y estilos CSS para la página.
+  - <body>: Contiene la estructura principal de la página, incluyendo botones para alternar entre jugadores y coaches, y las listas de jugadores y coaches.
+
+  ESTILOS CSS:
+  - body: Define el estilo general del cuerpo de la página.
+  - .equipos_lol: Define el contenedor principal para los equipos.
+  - .juego h3: Estilo para los encabezados de las secciones de juego.
+  - .box_botones: Contenedor para los botones de alternancia.
+  - .botones: Estilo para el contenedor de botones.
+  - .botones button: Estilo para los botones de alternancia.
+  - #b_jugadores y #b_coaches: Estilos específicos para los botones de jugadores y coaches.
+  - .equipos-lista: Contenedor para las listas de jugadores y coaches.
+  - .equipo_lol: Estilo para cada tarjeta de jugador o coach.
+  - .equipo_lol_info: Estilo para la información dentro de cada tarjeta.
+  - .jugadores_lol y .coaches_lol: Estilos para las listas de jugadores y coaches.
+  - Media Queries: Ajustes de estilo para dispositivos móviles y tablets.
+
+  FUNCIONES JAVASCRIPT:
+  - mostrarDefault(): Muestra la lista de jugadores y oculta la de coaches (no se usa explícitamente en el código).
+  - mostrarJugadores(): Muestra la lista de jugadores y oculta la de coaches. Cambia el color de fondo de los botones para indicar la selección.
+  - mostrarCoaches(): Muestra la lista de coaches y oculta la de jugadores. Cambia el color de fondo de los botones para indicar la selección.
+
+  NOTAS:
+  - La función mostrarJugadores() se llama por defecto al cargar la página para mostrar inicialmente la lista de jugadores.
+  - Las imágenes de fondo para cada jugador y coach se definen mediante estilos en línea utilizando URLs específicas.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .equipos_lol {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .juego h3 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .box_botones{
+        display: flex;
+        justify-content: center;
+        align-items: start;
+    }
+    .botones {
+      display: flex;
+      justify-content: start;
+      background-color: #cacaca;
+      border-radius: 25px;
+      width: 30%;
+      margin: auto;
+    }
+
+    .botones button {
+      flex: 1;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: #cacaca;
+      transition: all 0.3s ease;
+      border: none;
+      border-radius: 25px;
+    }
+
+    #b_jugadores {
+      background-color: #1AA9FF;
+      color: #fff;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+    }
+
+    #b_coaches {
+      background-color: #cacaca;
+      color: #fff;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+    }
+
+    .equipos-lista {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+ 
+    }
+
+    .equipo_lol {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-align: center;
+      width: 25vh;
+      height: 50vh;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      position: relative;
+     
+    }
+
+    .equipo_lol:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Ocultar el paralelogramo inicialmente */
+    .equipo_lol_info {
+      background-color: #1AA9FF;
+      transform: skewY(-10deg);
+      width: 100%;
+      height: 25%;
+      position: absolute;
+      bottom: 0;
+      right: -100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: right 0.5s ease-in-out;
+      padding-bottom: 10px;
+    }
+
+    /* Mostrar el paralelogramo al pasar el mouse */
+    .equipo_lol:hover .equipo_lol_info {
+      right: 0;
+    }
+
+    /* Ajustar tamaño y color del texto */
+    .equipo_lol_info h4 {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .equipo_lol_info p {
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+      font-style: italic;
+    }
+
+    .jugadores_lol, .coaches_lol {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      
+    }
+
+    /* Media Queries para dispositivos móviles */
+    @media screen and (max-width: 768px) {
+      .coaches_lol{
+        flex-direction: column;
+      }
+      .jugadores_lol {
+          flex-direction: column;
+      }
+      .equipo_lol{
+          width: 40vh;
+
+      }
+      .equipo_lol_info {
+        right: 0 !important;
+        transform: skewY(-10deg) !important;
+        height: 20% !important;
+        transition: none !important;
+        padding-bottom: 20px;
+      }
+      .box_botones{
+        margin-right: 50%;
+     }
+      .botones{
+        background-color: #cacaca;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width:1024px) {
+      .coaches_lol{
+        flex-direction: column;
+      }
+      .coaches_lol h3{
+        margin: 0vh !important;
+        font-size: 50px;
+        margin-bottom: 2vh !important;
+      }
+      .jugadores_lol {
+          flex-direction: column;
+      }
+      .equipo_lol{
+          width: 40vh;
+      }
+      .equipo_lol_info {
+        right: 0;
+        transform: skewY(-10deg);
+        height: 30%;
+        transition: none;
+        padding-bottom:  50px !important;
+      }
+      .equipo_lol_info h4 {
+        margin: 0vh !important;
+        font-size: 50px;
+        margin-bottom: 2vh !important;
+      }
+      .box_botones{
+        margin-right: 0;
+      }
+      .botones{
+        background-color: #cacaca;
+        width: 40%;
+      }
+
+    }
+
+    #jugador1_lol { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/03/Camiseta_Tamoz.jpg"); }
+    #jugador2_lol { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/03/Camiseta_Nyx.jpg"); }
+    #jugador3_lol { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/03/Camiseta_Air.png"); }
+    #jugador4_lol { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/03/Camiseta_Cyraxx.jpg"); }
+    #jugador5_lol { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/03/Camiseta_Wrongo.jpg"); }
+    #coach1_lol { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/03/Camiseta_Sapartan.jpg"); }
+    #equipo1_lol { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/03/Camiseta_Alejandro.jpg"); }
+    #equipo2_lol { background-image: url("https://oxygengaming.es/wp-content/uploads/2024/03/Camiseta_Kinno.jpg"); }
+  </style>
+</head>
+<body>
+
+  <section class="equipos_lol">
+    <!-- Botones para alternar entre jugadores y coaches -->
+    <div class="box_botones">
+        <div class="botones">
+            <button id="b_jugadores" onclick="mostrarJugadores()">Jugadores</button>
+            <button id="b_coaches" onclick="mostrarCoaches()">Staff</button>
+        </div>
+    </div>
+    
+    <div class="juego"> 
+      <div class="equipos-lista">
+        <!-- Jugadores (por defecto visibles) -->
+        <div class="jugadores_lol">
+          <div id="jugador1_lol" class="equipo_lol">
+            <div class="equipo_lol_info">
+              <h4>TamoZ</h4>
+            </div>
+          </div>
+          
+          <div id="jugador2_lol" class="equipo_lol">
+            <div class="equipo_lol_info">
+              <h4>Nyx</h4>
+            </div>
+          </div>
+          
+          <div id="jugador3_lol" class="equipo_lol">
+            <div class="equipo_lol_info">
+              <h4>Air</h4>
+            </div>
+          </div>
+          
+          <div id="jugador4_lol" class="equipo_lol">
+            <div class="equipo_lol_info">
+              <h4>cyraXx</h4>
+            </div>
+          </div>
+          
+          <div id="jugador5_lol" class="equipo_lol">
+            <div class="equipo_lol_info">
+              <h4>Wrongo</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coaches (inicialmente ocultos) -->
+        <div class="coaches_lol">
+          <div id="coach1_lol" class="equipo_lol">
+            <div class="equipo_lol_info">
+              <h3 style="color: white;">Spartan</h3>
+            </div>
+            
+          </div>
+          <div id="equipo1_lol" class="equipo_lol">
+            <div class="equipo_lol_info">
+              <h3 style="color: white;">Alejandro</h3>
+            </div>
+            
+          </div>
+          <div id="equipo2_lol" class="equipo_lol">
+            <div class="equipo_lol_info">
+              <h3 style="color: white;">Kinno</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+    function mostrarDefault(){
+    // Mostrar jugadores y ocultar coaches
+      document.querySelector('.jugadores_lol').style.display = 'flex';
+      document.querySelector('.coaches_lol').style.display = 'none';
+    }
+    
+    // Función para mostrar los jugadores y ocultar los coaches (por defecto)
+    function mostrarJugadores() {
+      // Mostrar jugadores y ocultar coaches
+      document.querySelector('.jugadores_lol').style.display = 'flex';
+      document.querySelector('.coaches_lol').style.display = 'none';
+
+      document.getElementById('b_jugadores').style.backgroundColor = "#1AA9FF"
+      document.getElementById('b_coaches').style.backgroundColor = "#cacaca"
+      
+    }
+  
+    // Función para mostrar los coaches y ocultar los jugadores
+    function mostrarCoaches() {
+      // Mostrar coaches y ocultar jugadores
+      document.querySelector('.jugadores_lol').style.display = 'none';
+      document.querySelector('.coaches_lol').style.display = 'flex';
+
+      document.getElementById('b_jugadores').style.backgroundColor = "#cacaca"
+      document.getElementById('b_coaches').style.backgroundColor = "#1AA9FF"
+    
+    }
+    // Llamada a la función mostrarJugadores() para que se ejecute por defecto al cargar la página
+    mostrarJugadores()
+  </script>
+</body>
+</html>

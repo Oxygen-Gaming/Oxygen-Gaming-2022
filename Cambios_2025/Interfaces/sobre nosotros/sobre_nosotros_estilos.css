@@ -1,0 +1,222 @@
+/*Esto es el css adcional al editar la pagina, del sobre nosotros*/
+
+
+
+/* Sobreescribe el comportamiento del contenedor principal para ancho completo */
+.container {
+    width: 100vw !important; /* Asegura que ocupe el ancho completo de la ventana */
+    max-width: 100vw !important; /* Elimina restricciones de ancho máximo */
+    margin: 0 !important; /* Elimina márgenes */
+    padding: 0 !important; /* Elimina relleno adicional */
+}
+
+.page-title{
+	width:100%;
+	height:100vh !important;
+}
+
+.overlay{
+	display:None;
+}
+
+.section-title h3{
+    margin-top:30px;
+}
+
+#contenido_footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #1a191d;
+            padding: 10px 90px;
+        }
+
+        @media (max-width:320px) {
+            #contenido_footer {
+                padding: 10px 60px;
+            }
+        }
+
+        @media (min-width:390px) {
+            #contenido_footer {
+                padding: 10px 80px;
+            }
+        }
+
+
+
+        #arriba_footer {
+            display: flex;
+            flex-direction: column; /* Cambiado a columna por defecto */
+            justify-content: center;
+            align-items: start;
+            margin-left: 50px;
+            gap: 20px;
+            width: 100%; /* Aseguramos que el footer ocupe el 100% de la pantalla */
+        }
+
+        .menus_footer {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1;
+            min-width: 200px;
+            text-align: center; /* Alineación centrada para pantallas pequeñas */
+        }
+
+        .menus_footer span {
+            color: #1AA9FF;
+            font-weight: bold;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .info_footer {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .info_footer a {
+            text-decoration: none;
+            color: #ddd;
+            font-weight: bold;
+            transition: color 1s;
+        }
+
+        .info_footer a:hover {
+            color: #1AA9FF;
+        }
+
+        #redes_sociales {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #logo_footer {
+            width: 80%;
+            max-width: 200px;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: white;
+            background: #222;
+            border: 2px solid #1AA9FF;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-icon i {
+            transition: all 1s;
+        }
+
+        .social-icon #twitter:hover {
+            color: #1AA9FF;
+        }
+
+        .social-icon #instagram:hover {
+            color: #e4405f;
+        }
+
+        .social-icon #discord:hover {
+            color: #7289da;
+        }
+
+        .social-icon #tiktok:hover {
+            color: #69c9d0;
+        }
+
+        /* Media queries para hacer el diseño responsive */
+        @media (min-width: 768px) {
+            #arriba_footer {
+                flex-direction: row; /* Cambia a fila para pantallas más grandes */
+                justify-content: space-between;
+                gap: 40px;
+                
+            }
+
+            .menus_footer {
+                text-align: left; /* Alineación a la izquierda para pantallas grandes */
+            }
+        }
+
+        @media (min-width: 1024px) {
+            #arriba_footer {
+                gap: 50px; /* Mayor espacio entre los elementos */
+            }
+
+            .menus_footer {
+                min-width: 230px; /* Ajuste de ancho para pantallas grandes */
+            }
+        }
+
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+					
+					
+					.social-icon {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 30px;
+                        color: white;
+                        background: #222;
+                        border: 2px solid #1AA9FF;
+                        width: 70px;
+                        height: 70px;
+                        border-radius: 50%;
+                        transition: all 0.3s;
+                        text-decoration: none;
+                    }
+					
+					#logo_footer{
+						width:100%;
+					}
+					
+					.menus_footer span {
+						font-size:35px;
+					}
+            
+            #arriba_footer {
+                flex-direction: column; /* Cambiar a columna para pantallas de tablet */
+                justify-content: center;
+                align-items: center;
+                gap: 90px;
+                margin-left: 550px;
+				font-size:25px;
+            }
+
+            .menus_footer {
+               /* Centrar el texto para pantallas de tablet */
+                width: 100%; /* Asegurarse de que ocupe todo el ancho */
+            }
+
+            #redes_sociales {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+              
+                width: 100%;
+            }
+            
+                     
+        }
