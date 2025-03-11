@@ -1,0 +1,23 @@
+@media (min-width: 1024px) {
+    #mainNav .logo{
+        margin-left: 280px !important;
+        z-index:100; 
+    }
+    #menu-main-menu {
+        margin-right: 280px !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {	
+   #menu-main-menu{
+        display:flex;
+        align-items:start;
+        flex-direction:column;
+    }
+}
+@media (max-width: 768px) {
+    #menu-main-menu{
+        display:flex;
+        align-items:start;
+        flex-direction:column;
+    }  
+}

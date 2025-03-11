@@ -2,6 +2,12 @@
     width: 105% !important;
     height: 100vh !important;
 }
-#enlace_inicio {
-margin-left: 520px;
+@media (min-width: 1024px) {
+#mainNav .logo{
+    margin-left: 280px !important;
+    z-index:100;  
+}
+#menu-main-menu {
+    margin-right: 280px !important;
+}
 }

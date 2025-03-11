@@ -10,7 +10,7 @@
 
     #mainNav .logo a.navbar-brand1 img,
     #mainNav .logo a.navbar-brand2 img {
-        max-width: 110px !important;
+        max-width: 80px !important;
         height: auto !important;
         margin-left: 10px !important;
     }
@@ -70,15 +70,7 @@
     }
 }
 
-
-
-
-
-
 @media (min-width: 768px) and (max-width: 1024px) {
-	
-	
-	
     #menu-item-188 .dropdown-arrow {
         margin-left: 100px;
     }
@@ -87,7 +79,6 @@
         margin-left: 10px;
     }
 }
-
 
 @media (max-width: 768px) {
     #menu-item-188 .dropdown-arrow {
