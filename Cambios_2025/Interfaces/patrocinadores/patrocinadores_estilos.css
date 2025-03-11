@@ -1,23 +1,6 @@
 /* ======== Estilos generales ======== */
-.container {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-}
 
 /* Ajuste de filas internas para ancho completo */
-.container .row, .vc_row {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* Ajusta contenido interno dentro de las columnas */
-.vc_row .vc_column-inner {
-    padding: 0 !important;
-}
 
 /* Ajusta las imágenes dentro de los patrocinadores */
 .sponsor img {
@@ -47,43 +30,43 @@
         background-color: #1a191d;
         padding: 10px 75px;
     }
-    
+
     .container {
         width: 100% !important;
         margin: 0 auto !important;
         padding: 0 15px !important;
     }
-    
+
     .blog-title, .blog-info, .text-center {
         text-align: center !important;
     }
-    
+
     .page-title .blog-title {
         margin-top: 40% !important;
     }
-    
+
     .page-title.parallax {
         padding: 10px !important;
     }
-    
+
     .text-center {
         margin-bottom: 60px !important;
     }
-    
+
     .col-12.col-lg-2.d-flex.justify-content-between.align-items-center {
         padding-right: 40px !important;
     }
-    
+
     h1 {
         font-size: 33px !important;
     }
-    
+
     p.info {
         font-size: 15px !important;
         color: white !important;
         margin-top: 20px !important;
     }
-    
+
     footer .footer-widgets {
         margin-left: -20px !important;
     }
@@ -115,31 +98,31 @@
         justify-content: space-between !important;
         gap: 20px !important;
     }
-    
+
     .sponsor img {
         width: 260px !important;
         height: 220px !important;
     }
-    
+
     .sponsor-description {
         text-align: left !important;
         max-width: 60% !important;
     }
-    
+
     .page-title .blog-title {
         margin-top: 100px !important;
     }
-    
+
     .blog-info {
         max-width: 950px !important;
         font-size: 18px !important;
         line-height: 1.6 !important;
     }
-    
+
     h1 {
         font-size: 60px !important;
     }
-    
+
     p.info {
         font-size: 18px !important;
         color: white;
@@ -241,33 +224,40 @@ footer .footer-widgets {
         justify-content: space-between;
         gap: 40px;
     }
-    
+
     .menus_footer {
         text-align: left;
     }
 }
 
 @media (min-width: 1024px) {
-    
     #arriba_footer {
         gap: 50px;
-        margin-right:300px;
-        
+        margin-right: 300px;
     }
-    
+
     .menus_footer {
         min-width: 230px;
     }
 }
 
-
 @media (min-width: 768px) and (max-width: 1024px) {
-    
     #arriba_footer {
-        
         margin-right: 300px;
-        
     }
-    
-    
+}
+
+.overlay {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    #mainNav .logo {
+        margin-left: 280px !important;
+        z-index: 100;
+    }
+
+    #menu-main-menu {
+        margin-right: 280px !important;
+    }
 }

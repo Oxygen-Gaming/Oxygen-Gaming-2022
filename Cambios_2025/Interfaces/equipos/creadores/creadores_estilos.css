@@ -4,3 +4,13 @@ section.page h1, .blog-post h1, .comment h1, section.page h2, .blog-post h2, .co
 .equipo_creadores_social {
     margin-top: 20px;
 }
+@media (min-width: 1024px) {
+    #mainNav .logo{
+        margin-left: 280px !important;
+        z-index:100;      
+    }
+    
+    #menu-main-menu {
+        margin-right: 280px !important;
+    }
+}

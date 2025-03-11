@@ -22,14 +22,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valores</title>
     <style>
-        
-        
-
         #valores {
-            max-width: 1200px; /* Limita el ancho para evitar desbordes */
-            width: 90%; /* Que se ajuste mejor en diferentes resoluciones */
-            margin: auto; /* Centra el contenedor */
-    
+            max-width: 1200px;
+            width: 90%;
+            margin: auto; 
             margin-bottom:50px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -54,7 +50,6 @@
         .tarjeta_valor img {
             width: 100%;
             height: 228px;
-            
         }
 
         .valores_info {
@@ -72,18 +67,11 @@
             color: #666;
         }
 
-        
-
         @media (min-width: 769px) {  
             #i1 {
                 height: 62%;
             }
         }
-
-
-        
-
-        
 
         @media (max-width: 768px) {
             body {
@@ -92,18 +80,12 @@
 
             #valores{
                 margin-left: 0px;
-            }
-
-            
-            
+            }    
         }
-
-
-
 
         @media (max-width:1024px) and (min-width:768px) {
             #valores {
-                grid-template-columns: 1fr; /* Una sola columna */
+                grid-template-columns: 1fr;
                 gap: 20px;
                 margin: 20px;
             }
@@ -111,11 +93,11 @@
             .tarjeta_valor {
                 transition: transform 0.3s ease-in-out;
                 margin-bottom: 20px;
-                max-width: 500px; /* Fijamos un ancho máximo para las tarjetas */
+                max-width: 500px;
                 height: 480px;
-                width: 100%; /* Aseguramos que las tarjetas no sean más anchas que esto */
+                width: 100%;
                 margin-left: auto;
-                margin-right: auto; /* Centra las tarjetas */
+                margin-right: auto;
             }
 
             .tarjeta_valor img {
@@ -142,9 +124,6 @@
         #i1{
             height: 229px;
         }
-
-
-
 
     </style>
 </head>
@@ -175,5 +154,10 @@
             </div>
         </div>
     </div>
+    <script>
+        let titulo=document.getElementsByClassName('blog-title')
+        let titulo_real=titulo[0]     
+        titulo_real.textContent='Sobre Nosotros'
+    </script>
 </body>
 </html>

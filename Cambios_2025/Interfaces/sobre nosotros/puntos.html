@@ -24,108 +24,99 @@
     <title>Puntos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-       
-       #descripcion{
-        text-align: justify;
-       }
+        #descripcion {
+            text-align: justify;
+        }
 
-        #sobre_nosotros{
-            margin-top:20px;
+        #sobre_nosotros {
+            margin-top: 0px;
+            margin-bottom: 100px;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
         }
 
-        #descripcion_sobre_nosotros{
+        #descripcion_sobre_nosotros {
             width: 100% !important;
             background-color: #1AA9FF;
             height: 200px;
             display: flex;
             justify-content: center;
             align-items: center;
-            
         }
 
-        
-        .sobre_nosotros_contenedor{
+        .sobre_nosotros_contenedor {
             width: 100% !important;
-            background-color:#0066CC ;
+            background-color: #0066CC;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 850px;
             gap: 200px;
-            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3); /* Sombra */
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .sobre_nosotros_contenedor a{
+        .sobre_nosotros_contenedor a {
             width: 35%;
             border-radius: 2px;
-           
         }
 
-
-        .sobre_nosotros_contenedor img{
+        .sobre_nosotros_contenedor img {
             width: 75vh;
             height: 55vh;
             border-radius: 5px;
             transition: transform 0.3s ease-in-out;
-            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3); /* Sombra */
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .sobre_nosotros_contenedor img:hover{
+        .sobre_nosotros_contenedor img:hover {
             transform: scale(1.1);
         }
 
-
-
-        .sobre_nosotros_contenedor_info h3{
+        .sobre_nosotros_contenedor_info h3 {
             font-size: 50px;
-            font-weight: bold;  
+            font-weight: bold;
             color: white;
         }
 
-        .sobre_nosotros_contenedor_info span{
+        .sobre_nosotros_contenedor_info span {
             font-size: 20px;
-            
         }
 
-        #c1{
+        #c1 {
             background-color: #1AA9FF;
         }
 
-
-        #c2{
+        #c2 {
             background-color: white;
         }
 
-        #c3{
+        #c3 {
             background-color: #1AA9FF;
         }
 
-        #info1{
-           color: white; 
+        #info1 {
+            color: white;
         }
 
-
-        #info2 h3{
-            color: black; 
+        #info2 h3 {
+            color: black;
         }
 
-        #info2 h3 i{
-            color: black; 
+        #info2 h3 i {
+            color: black;
         }
 
-        #info2 span{
-            color: black; 
+        #info2 span {
+            color: black;
         }
 
-        #info3{
-            color: white; 
+        #info3 {
+            color: white;
         }
 
-        #descripcion{
+        #descripcion {
             background-color: white;
             color: black;
             font-size: 20px;
@@ -134,49 +125,41 @@
             font-weight: bold;
         }
 
-            .span_movil{
-                display: none;
-                text-align: justify;
-            }
-        
-            
+        .span_movil {
+            display: none;
+            text-align: justify;
+        }
 
-
-
-        @media (max-width:768px){
-            .span_pc{
+        @media (max-width: 768px) {
+            .span_pc {
                 display: none;
             }
 
-            .span_movil{
+            .span_movil {
                 display: block;
             }
 
-
-            .sobre_nosotros_contenedor{
+            .sobre_nosotros_contenedor {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
                 padding: 20px;
                 text-align: center;
-                height:800px;
+                height: 800px;
                 gap: 20px;
-
             }
 
-            .sobre_nosotros_contenedor a{
+            .sobre_nosotros_contenedor a {
                 width: 70%;
             }
 
-            .sobre_nosotros_contenedor img{
+            .sobre_nosotros_contenedor img {
                 width: 35vh;
                 height: 30vh;
             }
 
-
-
-            .sobre_nosotros_contenedor_info{
+            .sobre_nosotros_contenedor_info {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -185,27 +168,21 @@
                 margin-left: 40px;
             }
 
-            .sobre_nosotros_contenedor_info span{
-                
+            .sobre_nosotros_contenedor_info span {
                 width: 80%;
             }
         }
 
-
-        
-
-       
-        @media (max-width:1024px) and (min-width:768px){
-            
-            .span_pc{
+        @media (max-width: 1024px) and (min-width: 768px) {
+            .span_pc {
                 display: none;
             }
 
-            .span_movil{
+            .span_movil {
                 display: block;
             }
 
-            .sobre_nosotros_contenedor{
+            .sobre_nosotros_contenedor {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -216,16 +193,16 @@
                 gap: 60px;
             }
 
-            .sobre_nosotros_contenedor a{
+            .sobre_nosotros_contenedor a {
                 width: 60%;
             }
 
-            .sobre_nosotros_contenedor img{
+            .sobre_nosotros_contenedor img {
                 width: 45vh;
                 height: 25vh;
             }
 
-            .sobre_nosotros_contenedor_info{
+            .sobre_nosotros_contenedor_info {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -233,46 +210,45 @@
                 text-align: center;
             }
 
-            .sobre_nosotros_contenedor_info h3{
+            .sobre_nosotros_contenedor_info h3 {
                 font-size: 35px;
             }
 
-            .sobre_nosotros_contenedor_info span{
-                
+            .sobre_nosotros_contenedor_info span {
                 width: 80%;
             }
 
-            #descripcion{
+            #descripcion {
                 font-size: 18px;
                 height: 250px;
                 font-weight: bold;
                 line-height: 1.5;
             }
 
-            #descripcion_sobre_nosotros span{
+            #descripcion_sobre_nosotros span {
                 font-size: 22px;
             }
 
-            #info1, #info3{
+            #info1,
+            #info3 {
                 color: white;
             }
 
-            #info2 h3, #info2 span{
+            #info2 h3,
+            #info2 span {
                 color: black;
             }
 
-            #descripcion_sobre_nosotros{
+            #descripcion_sobre_nosotros {
                 height: 220px;
             }
 
-            .sobre_nosotros_contenedor a{
+            .sobre_nosotros_contenedor a {
                 width: 80%;
             }
         }
 
-        
-
-        .sobre_nosotros_contenedor_info{
+        .sobre_nosotros_contenedor_info {
             display: flex;
             justify-content: center;
             gap: 20px;
@@ -280,17 +256,11 @@
             flex-direction: column;
             text-align: justify !important;
         }
-
-
     </style>
-
-
 </head>
+
 <body>
     <div id="sobre_nosotros">
-
-
-
         <div id="descripcion" class="sobre_nosotros_contenedor">
             <span>Oxygen Gaming no es solo un club de esports, es una experiencia que conecta competición, eventos y comunidad.</span>
         </div>
@@ -299,25 +269,21 @@
             <a href=""><img src="https://oxygengaming.es/wp-content/uploads/2025/03/Sobre-nosotros-competicion--scaled.jpg" alt=""></a>
             <div id="info1" class="sobre_nosotros_contenedor_info">
                 <h3>Competición</h3>
-                
                 <span class="span_pc">Formamos equipos de alto nivel en títulos clave, combinando talento, <br> estrategia y entrenamiento para alcanzar la élite del gaming. Nuestro <br> objetivo es consolidarnos como un referente en League of Legends, <br> Valorant y EA FC, compitiendo con ambición en cada torneo.</span>
-
                 <span class="span_movil">Formamos equipos de alto nivel en títulos clave, combinando talento, estrategia y entrenamiento para alcanzar la élite del gaming. Nuestro  objetivo es consolidarnos como un referente en League of Legends, Valorant y EA FC, compitiendo con ambición en cada torneo.</span>
             </div>
         </div>
 
         <div id="c2" class="sobre_nosotros_contenedor">
-            
             <div id="info2" class="sobre_nosotros_contenedor_info">
                 <h3>Eventos</h3>
-                
                 <span class="span_pc">Realizamos actividades únicas adaptadas a todo tipo de público donde <br> mostramos que tanto el deporte tradicional y las nuevas tecnologías  son <br> perfectos aliados para trabajar el desarrollo físico y cognitivo.</span>
                 <span class="span_movil">Realizamos actividades únicas adaptadas a todo tipo de público donde mostramos que el deporte tradicional y las nuevas tecnologías son perfectos aliados para trabajar el desarrollo físico y cognitivo.</span>
             </div>
             <a href=""><img src="https://oxygengaming.es/wp-content/uploads/2025/03/Sobre-nosotros-eventos-scaled.jpg" alt=""></a>
         </div>
 
-        <div id="c3" class="sobre_nosotros_contenedor">
+        <div id="c3" class="sobre_nosotros_contenedor"></div>
             <a href=""><img id="i3" src="https://oxygengaming.es/wp-content/uploads/2025/03/Sobre-nosotros-Comunidad-scaled.jpg" alt=""></a>
             <div id="info3" class="sobre_nosotros_contenedor_info">
                 <h3>Comunidad</h3>
@@ -327,4 +293,5 @@
         </div>
     </div>
 </body>
+
 </html>
